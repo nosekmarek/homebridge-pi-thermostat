@@ -15,7 +15,7 @@ const ON = false;
 module.exports = function(homebridge) {
   Service = homebridge.hap.Service;
   Characteristic = homebridge.hap.Characteristic;
-  homebridge.registerAccessory('homebridge-pi-thermostat', 'Thermostat', Thermostat);
+  homebridge.registerAccessory('MAREK-homebridge-pi-thermostat', 'Thermostat', Thermostat);
 };
 
 class Thermostat {
