@@ -32,7 +32,7 @@ class Thermostat {
     this.blowerTurnOffTime = config.blowerTurnOffTime || 80000; // In milliseconds
     this.startDelay = config.startDelay || 10000; // In milliseconds
     this.temperatureCheckInterval = config.temperatureCheckInterval || 10000; // In milliseconds
-
+    this.dhtSensorType = config.dhtSensorType || 11; // 11 or 22
     HeatingCoolingStateToRelayPin = {
       [Characteristic.CurrentHeatingCoolingState.HEAT]: this.heatRelayPin,
       [Characteristic.CurrentHeatingCoolingState.COOL]: this.coolRelayPin
@@ -181,7 +181,7 @@ class Thermostat {
   }
 
   readTemperatureFromSensor() {
-    dhtSensor.read(22, this.temperatureSensorPin, (err, temperature, humidity) => {
+    dhtSensor.read(this.dhtSensorType, this.temperatureSensorPin, (err, temperature, humidity) => {
       if (!err) {
         this.currentTemperature = temperature;
         this.currentRelativeHumidity = humidity;
