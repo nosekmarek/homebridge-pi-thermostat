@@ -20,6 +20,7 @@
       "blowerTurnOffTime": 80000,
       "startDelay": 10000,
       "temperatureCheckInterval": 10000
+      "dhtSensorType": 11
     }
   ],
 
